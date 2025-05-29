@@ -20,7 +20,7 @@ import PhotoDetailPage from "./dashboard/photo-details/index.jsx";
 const routes = [
   {
     path: "/",
-    element: <Home />,
+    element: <Login />,
   },
   {
     path: "/sign-in",
