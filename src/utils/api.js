@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://photo-app-backend-kbnj.onrender.com/api",
+  baseURL: "http://localhost:4000/api",
   headers: {
     "Content-Type": "application/json",
   },
@@ -21,7 +21,7 @@ api.interceptors.request.use(
 );
 
 const noAuthApi = axios.create({
-  baseURL: "https://photo-app-backend-kbnj.onrender.com/api",
+  baseURL: "http://localhost:4000/api",
   headers: {
     "Content-Type": "application/json",
   },
