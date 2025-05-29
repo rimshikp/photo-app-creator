@@ -1,0 +1,461 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: calc(100vh - 80px);
+  background-color: #fff;
+  padding: 2rem;
+}
+
+.card {
+  /* background: #101f23; */
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 30px;
+  width: 100%;
+  max-width: 800px;
+  border: 1px solid #dcdcdc;
+  /* box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3); */
+}
+
+.title {
+  color: #000;
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.formGroup {
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.label {
+  display: block;
+  color: #000;
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.input {
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: 8px;
+  border: 1px solid #dcdcdc;
+  background: #fff;
+  color: white;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #646cff;
+  box-shadow: 0 0 0 2px rgba(100, 108, 255, 0.3);
+}
+
+.priceInputContainer {
+  position: relative;
+}
+
+.currencySymbol {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #dcdcdc;
+}
+
+.priceInputContainer .input {
+  padding-left: 35px;
+}
+
+.searchContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 12px;
+  color: #dcdcdc;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 12px 15px 12px 40px;
+  border-radius: 8px;
+  border: 1px solid #dcdcdc;
+  background: #fff;
+  color: #000;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.dropdown {
+  position: absolute;
+  width: 100%;
+  max-height: 200px;
+  overflow-y: auto;
+  background: #1a2b32;
+  border-radius: 8px;
+  margin-top: 5px;
+  z-index: 10;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dropdownItem {
+  padding: 12px 15px;
+  color: rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.dropdownItem:hover {
+  background: rgba(100, 108, 255, 0.2);
+}
+
+.dropdownEmpty {
+  padding: 12px 15px;
+  color: rgba(255, 255, 255, 0.5);
+  font-style: italic;
+}
+
+.selectedEvent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(100, 108, 255, 0.1);
+  padding: 10px 15px;
+  border-radius: 8px;
+  margin-top: 10px;
+  color: white;
+}
+
+.clearSelection {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 50%;
+  transition: all 0.2s;
+}
+
+.clearSelection:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.clearSelection:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.uploadArea {
+  border: 2px dashed #dcdcdc;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  transition: all 0.3s;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.uploadArea:hover {
+  border-color: rgba(100, 108, 255, 0.5);
+}
+
+.fileInput {
+  display: none;
+}
+
+.uploadPrompt {
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.uploadHint {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.thumbnailsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 15px;
+  width: 100%;
+}
+
+.thumbnailWrapper {
+  position: relative;
+  aspect-ratio: 4/3;
+}
+
+.thumbnail {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.removeThumbnail {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 24px;
+  height: 24px;
+  background: rgba(0, 0, 0, 0.7);
+  border: none;
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.removeThumbnail:hover {
+  background: rgba(255, 107, 107, 0.9);
+}
+
+.progressBar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.progressFill {
+  height: 100%;
+  background: #646cff;
+  transition: width 0.3s ease;
+}
+
+.progressText {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 0.7rem;
+  font-weight: bold;
+}
+
+.uploadSuccess {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(46, 204, 113, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.5rem;
+}
+
+.uploadFailed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(231, 76, 60, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  font-weight: bold;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.addMore {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 4/3;
+  border: 2px dashed #dcdcdc;
+  border-radius: 6px;
+  color: #000;
+  cursor: pointer;
+  transition: all 0.3s;
+  padding: 10px;
+}
+
+.addMore:hover {
+  border-color: rgba(100, 108, 255, 0.5);
+  color: #000;
+}
+
+.addMore span {
+  font-size: 0.9rem;
+  margin-top: 10px;
+}
+
+.fileCount {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.clearAllButton {
+  background: none;
+  border: none;
+  color: #ff6b6b;
+  cursor: pointer;
+  font-size: 0.9rem;
+  padding: 5px;
+  transition: all 0.2s;
+}
+
+.clearAllButton:hover {
+  text-decoration: underline;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 30px;
+}
+
+.uploadButton {
+  background: #646cff;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.uploadButton:hover:not(:disabled) {
+  background: #535bf2;
+}
+
+.uploadButton:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.error {
+  color: #ff6b6b;
+  background: rgba(255, 107, 107, 0.1);
+  padding: 12px 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .card {
+    padding: 20px;
+  }
+
+  .thumbnailsContainer {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  }
+}
+
+/* Add these styles to your existing PhotoUpload.module.css */
+
+.tagInputContainer {
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+  padding: 8px;
+  background: #fff;
+}
+
+.tagsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  min-height: 40px;
+}
+
+.tag {
+  display: flex;
+  align-items: center;
+  background: rgba(100, 108, 255, 0.2);
+  color: #000;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  gap: 6px;
+}
+
+.removeTag {
+  background: none;
+  border: none;
+  color: #000;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+}
+
+.removeTag:hover {
+  color: #000;
+}
+
+.tagInput {
+  flex: 1;
+  min-width: 120px;
+  /* background: transparent; */
+  border: none;
+  color: #000;
+  padding: 8px;
+  outline: none;
+  font-size: 0.9rem;
+}
+
+.tagInput::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.tagHint {
+  color: #000;
+  font-size: 0.8rem;
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
